@@ -8,7 +8,7 @@ This is a mock web automation tool project implemented using Flask.
 git clone <https_url>
 ```
 
-2. Create Python virtual environment in the project root directory
+2. Create Python virtual environment in the project root directory ([What is virtual environment?](https://www.geeksforgeeks.org/python-virtual-environment/))
 
 ```bash
 python -m venv venv
