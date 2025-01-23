@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}Compare Excel{% endblock %}
+
+{% block content %}
+    <h3>Select Sheets for Processing</h3>
+    <form class="mt-5 d-flex flex-column gap-5 align-items-start" action="/excel-diff-checker/process" method="post">
+        <input type="hidden" name="expected_file_path" value="{{ expected_file_path }}">
+        <input type="hidden" name="actual_file_path" value="{{ actual_file_path }}">
+
+        <div>
+            <h5>Expected File: {{ expected_file_name }}</h5>
+            <label for="expect_sheet">Choose a sheet:</label>
+            <select name="expect_sheet" id="expect_sheet">
+            {% for sheet in expected_file_sheets %}
+            <option value="{{ sheet }}">{{ sheet }}</option>
+            {% endfor %}
+        </select>
+        </div>
+
+        <div>
+            <h5>Actual File: {{ actual_file_name }}</h5>
+            <label for="actual_sheet">Choose a sheet:</label>
+            <select name="actual_sheet" id="actual_sheet">
+            {% for sheet in actual_file_sheets %}
+            <option value="{{ sheet }}">{{ sheet }}</option>
+            {% endfor %}
+            </select>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Process</button>
+    </form>
+{% endblock %}

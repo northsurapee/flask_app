@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}Compare Excel{% endblock %}
+
+{% block content %}
+    <h3>Upload Expected and Actual Excel Files</h3>
+    <form class="mt-5" action="/excel-diff-checker/upload" method="post" enctype="multipart/form-data">
+        <label class="mb-1" for="expected_file">Select Expected File :</label>
+        <input class="form-control" type="file" id="expected_file" name="expected_file" accept=".xlsx, .xls" required><br><br>
+
+        <label class="mb-1" for="actual_file">Select Actual File :</label>
+        <input class="form-control" type="file" id="actual_file" name="actual_file" accept=".xlsx, .xls" required><br><br>
+
+        <button class="btn btn-primary" type="submit">Next</button>
+    </form>
+{% endblock %}

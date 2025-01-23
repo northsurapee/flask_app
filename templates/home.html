@@ -1,0 +1,40 @@
+{% extends "layout.html" %} {% block title %}Web automation tools{% endblock %}
+{% block content %}
+
+<h3 class="mt-5">Step to add new tool</h3>
+<ol class="mb-5">
+  <li>Create new blueprint (submodule of website) in blueprints folder.</li>
+  <li>Create <code>__init__.py</code> to set up new blueprint.</li>
+  <li>
+    Register blueprint in <code>app.py</code> and add the link to that blueprint
+    in global
+    <code>template/layout.html</code>
+  </li>
+  <li>
+    Create <code>routes.py</code> to control everything about this submodule
+    such as route url to web page (html template) or do some action.
+  </li>
+  <li>
+    Create <code>templates/page_name.html</code> to create web page (html
+    template is html with capability to inject code into it).
+  </li>
+  <li>
+    Create static folder to keep static content like css files, images, uploads
+    files etc.
+  </li>
+  <li>
+    Create <code>logic.py</code> to keep python business logic (python script)
+    for use in <code>routes.py</code>.
+  </li>
+</ol>
+
+<h3>Step required after install new packages</h3>
+<ol>
+  <li>install new package by <code>pip install package_name</code></li>
+  <li>check all packages installed by <code>pip list</code></li>
+  <li>
+    after that run <code>pip freeze > requirements.txt</code> to update all the
+    packages name in the generate requirement.txt file.
+  </li>
+</ol>
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Automation Tools</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <header class="purple-header">
+        <a class="header-link" href="/">
+            <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}">
+            <h2 class="scx">SCX</h2>
+            <h6 class="web-automation-tools">Web Automation Tools</h6>
+        </a>
+    </header>
+    <div class="sidebar-content">
+        <ul class="purple-sidebar">
+            <li><a href="{{ url_for('excel_diff_checker.index') }}">Compare Excel</a></li>
+        </ul>
+        <div class="tool-content">
+            <h1 class="tool-title">{% block title %}{% endblock %}</h1>
+            <div class="tool-body">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</body>
+
+</html>
