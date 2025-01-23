@@ -17,7 +17,7 @@ python -m venv venv
 3. Activate virtual environment (PyCharm will activate automatically)
 
 ```bash
-\venv\Scripts\activate
+.\venv\Scripts\activate
 ```
 
 4. Install all packages
