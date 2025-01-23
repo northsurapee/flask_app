@@ -9,7 +9,7 @@ from flask import render_template, request, send_file
 
 from .logic import excel_diff_check
 
-STORAGE_FOLDER = os.path.join(os.path.dirname(__file__), 'static', 'files')
+STORAGE_FOLDER = os.path.join(os.path.dirname(__file__), 'static', 'temp_files')
 
 # File expiration time (in seconds)
 FILE_EXPIRATION_TIME = 300
@@ -31,8 +31,8 @@ def upload_files():
     actual_file_id = str(uuid.uuid4())
 
     # Save the files
-    expected_file_path = os.path.join(STORAGE_FOLDER, f"{expected_file_id}_{expected_file.name}")
-    actual_file_path = os.path.join(STORAGE_FOLDER, f"{actual_file_id}_{actual_file.name}")
+    expected_file_path = os.path.join(STORAGE_FOLDER, f"{expected_file_id}_{expected_file.name}.xlsx")
+    actual_file_path = os.path.join(STORAGE_FOLDER, f"{actual_file_id}_{actual_file.name}.xlsx")
 
     expected_file.save(expected_file_path)
     actual_file.save(actual_file_path)
