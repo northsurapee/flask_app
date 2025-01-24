@@ -8,25 +8,31 @@ This is a mock web automation tool project implemented using Flask.
 git clone <https_url>
 ```
 
-2. Create Python virtual environment in the project root directory ([What is virtual environment?](https://www.geeksforgeeks.org/python-virtual-environment/))
+2. Go to project root directory
+
+```bash
+cd flask_app
+```
+
+3. Create Python virtual environment in the project root directory ([What is virtual environment?](https://www.geeksforgeeks.org/python-virtual-environment/))
 
 ```bash
 python -m venv venv
 ```
 
-3. Activate virtual environment (PyCharm will activate automatically)
+4. Activate virtual environment (PyCharm will activate automatically)
 
 ```bash
 .\venv\Scripts\activate
 ```
 
-4. Install all packages
+5. Install all packages
 
 ```bash
 pip install -r requirements.txt
 ```
 
-5. Try to run app
+6. Try to run app
 
 - with run button : select app.py file and click run button
 - with command :
