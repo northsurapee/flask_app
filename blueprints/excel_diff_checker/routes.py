@@ -10,6 +10,8 @@ from flask import render_template, request, send_file
 from .logic import excel_diff_check
 
 STORAGE_FOLDER = os.path.join(os.path.dirname(__file__), 'static', 'temp_files')
+if not os.path.exists(STORAGE_FOLDER):
+    os.makedirs(STORAGE_FOLDER)
 
 # File expiration time (in seconds)
 FILE_EXPIRATION_TIME = 300
