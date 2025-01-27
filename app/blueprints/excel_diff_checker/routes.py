@@ -19,7 +19,7 @@ FILE_EXPIRATION_TIME = 300
 
 @excel_diff_checker_bp.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('excel_diff_checker/index.html')
 
 
 @excel_diff_checker_bp.route('/upload', methods=['POST'])
@@ -27,7 +27,7 @@ def upload_files():
     # Ensure both files are uploaded
     expected_file = request.files['expected_file']
     actual_file = request.files['actual_file']
-
+    
     # Generate unique identifiers for the files
     expected_file_id = str(uuid.uuid4())
     actual_file_id = str(uuid.uuid4())
@@ -47,7 +47,7 @@ def upload_files():
     cleanup_expired_files()
 
     return render_template(
-        'select_sheet.html',
+        'excel_diff_checker/select_sheet.html',
         expected_file_sheets=expected_file_sheets,
         actual_file_sheets=actual_file_sheets,
         expected_file_name=expected_file.filename,

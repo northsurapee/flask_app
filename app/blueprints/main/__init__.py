@@ -5,3 +5,7 @@ main_bp = Blueprint('main', __name__, template_folder='templates', static_folder
 
 # Import routes to associate them with this blueprint
 from . import routes
+
+
+
+
