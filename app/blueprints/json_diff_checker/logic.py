@@ -1,6 +1,7 @@
 import json
 from deepdiff import DeepDiff
 
+
 def get_diff(expected_json_str, actual_json_str):
     try:
         expected = json.loads(expected_json_str)
@@ -20,7 +21,4 @@ def get_diff(expected_json_str, actual_json_str):
     if not diff_serializable:
         return "No differences found!"
     else:
-        return json.dumps(diff, indent=2)
-
-
-
+        return json.dumps(diff_serializable, indent=2)
