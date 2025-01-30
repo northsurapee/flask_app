@@ -4,8 +4,7 @@ import time
 
 import pandas as pd
 
-from . import excel_diff_checker_bp
-from flask import render_template, request, send_file
+from flask import render_template, request, send_file, Blueprint
 
 from .logic import excel_diff_check
 
@@ -15,6 +14,10 @@ if not os.path.exists(STORAGE_FOLDER):
 
 # File expiration time (in seconds)
 FILE_EXPIRATION_TIME = 300
+
+# Create the blueprint object
+excel_diff_checker_bp = Blueprint('excel_diff_checker', __name__,
+                                  template_folder='templates')
 
 
 @excel_diff_checker_bp.route('/')
