@@ -40,3 +40,8 @@ pip install -r requirements.txt
 ```bash
 flask run --debug
 ```
+![home](https://github.com/user-attachments/assets/f05dad89-d027-4a93-88cb-d2b7e6cad12b)
+![excel](https://github.com/user-attachments/assets/fccfae4f-5f4b-4efa-9999-a3a1c8f44e62)
+![json](https://github.com/user-attachments/assets/7e0204e6-d089-4bb7-9b7f-afe764fec912)
+
+
