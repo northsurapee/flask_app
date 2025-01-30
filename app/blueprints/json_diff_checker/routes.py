@@ -1,11 +1,16 @@
-from flask import render_template, request, send_file
-from . import json_diff_checker_bp
+from flask import render_template, request, send_file, Blueprint
 from .logic import get_diff
+
+# Create the blueprint object
+json_diff_checker_bp = Blueprint('json_diff_checker',
+                                 __name__,
+                                 template_folder='templates',
+                                 static_folder='static')
 
 
 @json_diff_checker_bp.route('/')
-def home():
-    return render_template('json_diff_checker/home.html')
+def fill_json():
+    return render_template('json_diff_checker/fill_json.html')
 
 
 @json_diff_checker_bp.route('/compare', methods=['POST'])
@@ -19,5 +24,3 @@ def compare():
 
     return render_template('json_diff_checker/result.html',
                            result=result)
-
-
